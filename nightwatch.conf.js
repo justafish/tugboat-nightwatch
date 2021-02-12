@@ -1,5 +1,6 @@
 module.exports = {
   src_folders: ['test'],
+  output_folder: 'tests_output',
 
   webdriver: {
     start_process: true,
