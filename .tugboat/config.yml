@@ -8,10 +8,9 @@ services:
       init:
         - ln -snf "${TUGBOAT_ROOT}/web" "${DOCROOT}"
         - sudo apt update && sudo apt install sqlite3 chromium chromium-driver
+        - mkdir -p ${TUGBOAT_ROOT}/web/sites/default/files
+        - chmod 777 ${TUGBOAT_ROOT}/web/sites/default/files
       build:
         - composer install
         - vendor/bin/drush site:install minimal --db-url=sqlite://sites/default/files/.ht.sqlite --yes
-
-  mysql:
-    image: tugboatqa/mysql
 
