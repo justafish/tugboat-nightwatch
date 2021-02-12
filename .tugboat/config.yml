@@ -11,7 +11,7 @@ services:
         # Link the document root to the expected path. This example links
         # /htdocs to the docroot
         - ln -snf "${TUGBOAT_ROOT}/htdocs" "${DOCROOT}"
-        - sudo apt update && sudo apt install chromium chromedriver
+        - sudo apt update && sudo apt install chromium chromium-driver
 
   mysql:
     image: tugboatqa/mysql
