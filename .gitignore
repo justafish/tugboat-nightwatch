@@ -10,6 +10,7 @@ web/
 !.yarn/sdks
 !.yarn/versions
 .npmrc
+yarn-error.log
 
 # Nightwatch
 chromedriver.log
