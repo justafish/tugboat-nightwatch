@@ -16,5 +16,6 @@ services:
         - composer install
         - vendor/bin/drush site:install minimal --db-url=sqlite://sites/default/files/.ht.sqlite --yes
         - chown www-data:www-data ${TUGBOAT_ROOT}/web/sites/default/files/.ht.sqlite
+        - yarn install
         - CHROME_BIN=/usr/bin/chromium CHROMEDRIVER_BIN=/usr/bin/chromedriver yarn run nightwatch
 
