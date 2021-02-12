@@ -4,7 +4,7 @@ module.exports = {
       .url('http://localhost')
       .waitForElementVisible('body')
       .assert.titleContains('Log in')
-      .assert.visible('input[data-drupal-selector=name]')
+      .assert.visible('input[data-drupal-selector=edit-name]')
       .end();
   }
 };
