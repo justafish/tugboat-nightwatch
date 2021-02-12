@@ -7,7 +7,7 @@ services:
     commands:
       init:
         - ln -snf "${TUGBOAT_ROOT}/web" "${DOCROOT}"
-        - sudo apt update && sudo apt install chromium chromium-driver
+        - sudo apt update && sudo apt install sqlite3 chromium chromium-driver
       build:
         - composer install
         - vendor/bin/drush site:install minimal --db-url=sqlite://sites/default/files/.ht.sqlite --yes
