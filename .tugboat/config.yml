@@ -1,0 +1,18 @@
+services:
+  php:
+    image: tugboatqa/php:apache
+    default: true
+    depends: mysql
+
+    # A set of commands to run while building this service
+    commands:
+      # Commands that set up the basic preview infrastructure
+      init:
+        # Link the document root to the expected path. This example links
+        # /htdocs to the docroot
+        - ln -snf "${TUGBOAT_ROOT}/htdocs" "${DOCROOT}"
+        - sudo apt update && sudo apt install chromium chromedriver
+
+  mysql:
+    image: tugboatqa/mysql
+
