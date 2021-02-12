@@ -11,3 +11,6 @@ web/
 !.yarn/versions
 .npmrc
 
+# Nightwatch
+chromedriver.log
+tests_output/
