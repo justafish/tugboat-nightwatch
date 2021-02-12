@@ -18,5 +18,5 @@ services:
         - chown www-data:www-data ${TUGBOAT_ROOT}/web/sites/default/files/.ht.sqlite
         - export CHROME_BIN=/usr/bin/chromium
         - export CHROMEDRIVER_BIN=/usr/bin/chromedriver
-        - yarn run nighwatch
+        - yarn run nightwatch
 
