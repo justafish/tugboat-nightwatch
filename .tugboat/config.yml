@@ -7,9 +7,11 @@ services:
     commands:
       init:
         - ln -snf "${TUGBOAT_ROOT}/web" "${DOCROOT}"
-        - sudo apt update && sudo apt install sqlite3 chromium chromium-driver
+        - curl -fsSL https://deb.nodesource.com/setup_15.x | bash -
+        - sudo apt update && sudo apt install sqlite3 chromium chromium-driver nodejs
         - mkdir -p ${TUGBOAT_ROOT}/web/sites/default/files
         - chmod 777 ${TUGBOAT_ROOT}/web/sites/default/files
+        - npm install -g yarn
       build:
         - composer install
         - vendor/bin/drush site:install minimal --db-url=sqlite://sites/default/files/.ht.sqlite --yes
